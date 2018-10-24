@@ -16,7 +16,7 @@ try:
     trends = data['trends']
     names = [trend['name'] for trend in trends]
     trendsName = ' '.join(names)
-    file_num = 1250
+    file_num = 1680
     #print(names)
     for trend in names:
         if trend[0] == '#':
@@ -27,7 +27,7 @@ try:
             data={}
             for tweet in tweepy.Cursor(api.search,q=trend,
                             lang="en",
-                            since="2018-10-22",tweet_mode="extended",truncated="true").items():
+                            since="2018-10-24",tweet_mode="extended",truncated="true").items():
                 file_name = str(file_num) + '.txt'
                 f = open(file_name,"w")
                 if tweet.in_reply_to_status_id is None:
